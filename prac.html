@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="prac.css" />
+    <script defer src="index.js"></script>
+    <title>Hello</title>
+</head>
+<body>
+<img alt="Logo" src="" id="bodyLogo" width="200px" height="200px">
+    <h1>Title</h1>
+    <nav>
+        <div class="menuItems" style="display:flex">
+            <div id="menuHome" class="menuMeow">Home</div>
+            <div id="menuNZSL" class="menuMeow">NZSL</div>
+            <div id="menuEvents" class="menuMeow">Events</div>
+            <div id="menuRegister" class="menuMeow">Register</div>
+            <div id="menuLogin" class="menuMeow">Login</div>
+            <div id="menuGuest" class="menuMeow">Guest Book</div>
+        </div>
+    </nav>
+
+    <section id="sectionHome">
+        <h2>Home</h2>
+        <p>MEOW MEOW MEOW MEOW MEOW MEOW MEOWWWWWWWWWWWWW.</p>
+    </section>
+
+    <section id="sectionNZSL">
+        <h2>NZSL</h2>
+        <label for="imageSearch">Enter image name:</label><br/>
+        <input type="text" id="imageSearch">
+        <div id="imageContainer"></div>
+    </section>
+
+    <section id="sectionEvents">
+        <h2>Events</h2>
+    </section>
+
+    <section id="sectionRegister">
+        <h2>Register</h2>
+        <div id="registerSuccess" class="popUp">
+            <div class="popUpInner">
+                <h2>User Successfully Registered.</h2>
+                <p id="registerSuccessOk">Ok</p>
+            </div>
+        </div>
+        <label for="registerUsername" >Enter username:</label><br/>
+        <input id="registerUsername" type="text"><br/>
+
+        <label for="registerPassword">Enter password:</label><br/>
+        <input id="registerPassword" type="password"><br/>
+
+        <label for="registerAddress">Enter address:</label><br/>
+        <input id="registerAddress" type="text"><br/>
+
+        <button id="registerButton" style="margin:10px; padding:10px;">Register</button>
+    </section>
+
+    <section id="sectionLogin">
+        <h2>Login</h2>
+    </section>
+
+    <section id="sectionGuest">
+        <h2>Guest</h2>
+    </section>
+
+</body>
+<footer id="footer">PlaceHolder</footer>
+</html>
