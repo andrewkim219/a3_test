@@ -225,4 +225,75 @@ async function register() {
 const registerButton = document.getElementById("registerButton");
 registerButton.addEventListener("click", register);
 
+const loginUsername = document.getElementById("loginUsername");
+const loginPassword = document.getElementById("loginPassword");
+const loginButton = document.getElementById("loginButton");
 
+async function login() {
+    const username = loginUsername.value;
+    const password = loginPassword.value;
+
+    if (username === "" || password === "") {
+        alert("Please fill in all fields");
+        return;
+    }
+
+    const authToken = btoa(`${username}:${password}`);
+    const response = await fetch("https://cws.auckland.ac.nz/nzsl/api/TestAuth", {
+
+        headers: {
+            "Authorization": `Basic ${authToken}`
+        }
+    });
+
+    if (response.status === 200) {
+        alert("Login Successful");
+        loginUsername.value = "";
+        loginPassword.value = "";
+        currentUsername = username;
+        currentPassword = password;
+    } else {
+        alert("Login Failed");
+    }
+}
+
+loginButton.addEventListener("click", login);
+
+const commentFrame = document.getElementById("commentFrame");
+function fetchComments() {
+    commentFrame.src = "https://cws.auckland.ac.nz/nzsl/api/Comments";
+}
+
+fetchComments();
+let currentUsername;
+let currentPassword;
+
+const commentText = document.getElementById("commentText");
+async function postComments() {
+    const comment = commentText.value;
+
+    if(comment === ""){
+        alert("MEOWWW");
+        return;
+    }
+
+    const authToken = btoa(`${currentUsername}:${currentPassword}`)
+    const response = await fetch(`https://cws.auckland.ac.nz/nzsl/api/Comment?comment=${comment}`, {
+        headers: {
+            "Authorization": `Basic ${authToken}`
+        },
+        method: "POST",
+        body: comment
+    });
+
+    if(response.status === 200) {
+        alert("Comment posted");
+        fetchComments();
+        commentText.value = "";
+    } else {
+        alert("Comment failed");
+    }
+}
+
+const postButton = document.getElementById("postButton");
+postButton.addEventListener("click", postComments);

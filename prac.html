@@ -28,7 +28,7 @@
     <section id="sectionNZSL">
         <h2>NZSL</h2>
         <label for="imageSearch">Enter image name:</label><br/>
-        <input type="text" id="imageSearch">
+        <input type="text" id="imageSearch" style="width:35%;">
         <div id="imageContainer"></div>
     </section>
 
@@ -58,12 +58,25 @@
 
     <section id="sectionLogin">
         <h2>Login</h2>
+
+        <label for="loginUsername">Enter your username:</label><br/>
+        <input id="loginUsername"><br/><br/>
+
+        <label for="loginPassword">Enter your password:</label><br/>
+        <input id="loginPassword"><br/><br/>
+
+        <button id="loginButton">Login</button>
     </section>
 
     <section id="sectionGuest">
         <h2>Guest</h2>
+
+        <label for="commentText">Enter Comment here:</label><br/>
+        <textarea id="commentText"></textarea><br/>
+        <button id="postButton">Post Comment</button><br/>
+        <iframe id="commentFrame" style="margin-top:20px"></iframe>
     </section>
 
 </body>
-<footer id="footer">PlaceHolder</footer>
+<footer id="footer"></footer>
 </html>
